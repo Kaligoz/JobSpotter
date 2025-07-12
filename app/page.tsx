@@ -1,103 +1,237 @@
+import PropositionsCloseCard from "@/components/custom/PropositionsCloseCard";
+import ReviewsCards from "@/components/custom/ReviewsCards";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main>
+      <header className="m-auto flex flex-col text-center justify-center items-center mb-12">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <h1 className="text-6xl font-semibold mb-4 w-1/3">
+          Пошук роботи <br/>та підробітку без зайвих турбот
+        </h1>
+
+        <Image
+          src="/MainPageImage1.png"
+          alt="desk with two people working on the same project"
+          width={1240}
+          height={448}
+        />
+
+      </header>
+
+      <section className="m-auto flex justify-between items-start w-2/3 mb-8">
+
+        <div className="flex flex-col">
+          <h2 className="text-4xl font-semibold mb-8">Чому обирають нас?</h2>
+
+          <p className="font-medium text-xl mb-4">
+            Ми допомагаємо знайти підробіток поруч із вами: швидко, <br/>
+            просто та зручно. Тільки перевірені вакансії, широкий вибір<br/> 
+            та можливість заощадити час на пошуку.
+          </p>
+
+          <div className="grid grid-cols-[auto_auto] place-items-center gap-4 mb-4">
+            <h2 className="text-4xl font-bold">Різноманітність</h2>
+            <p className="font-medium text-lg">
+              Широкий вибір підробітків на будь-який<br/> смак та графік.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-[auto_auto] place-items-center gap-4 mb-4 text-[#444969] ml-8">
+            <h2 className="text-4xl font-bold">Локальність</h2>
+            <p className="font-medium text-lg">
+              Ми знаходимо підробітки саме поруч із<br/> вашим місцем проживання.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-[auto_auto] place-items-center gap-4 mb-4 text-[#33474D] ml-16">
+            <h2 className="text-4xl font-bold">Зручність</h2>
+            <p className="font-medium text-lg">
+              Простий інтерфейс дозволяє знайти<br/> роботу за декілька хвилин.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-[auto_auto] place-items-center gap-4 mb-4 text-[#969BBB] ml-32">
+            <h2 className="text-4xl font-bold">Швидкість</h2>
+            <p className="font-medium text-lg">
+              Тільки перевірені роботодавці та<br/> вакансії.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-[auto_auto] place-items-center gap-4 mb-4 text-[#73699B] ml-64">
+            <h2 className="text-4xl font-bold">Надійність</h2>
+            <p className="font-medium text-lg">
+              Ми допомагаємо вам розкрити потенціал<br/> і досягти кар&apos;єрних висот.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div className="ml-8">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/MainPageGroup.png"
+            alt="desk with two people working on the same project"
+            className=""
+            width={492}
+            height={445}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+
+      </section>
+
+      <section className="m-auto flex flex-col justify-between items-start w-2/3 mb-8">
+
+        <h2 className="text-4xl font-semibold mb-8">Пропозиції поруч</h2>
+
+        <div className="flex flex-row gap-x-8">
+
+          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
+          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
+          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
+          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
+
+        </div>
+
+      </section>
+
+      <section className="m-auto flex flex-col justify-between items-start w-2/3 mb-8">
+
+        <h2 className="text-4xl font-semibold mb-8">Відгуки</h2>
+
+        <Carousel>
+          <CarouselContent>
+            <CarouselItem className="basis-1/2">
+              <ReviewsCards 
+                message="JobSpotter - це зручна та ефективна платформа для пошуку роботи. Вона дозволяє швидко знаходити вакансії, що відповідають моїм вимогам, і надає простий інтерфейс. Дуже подобається, що можна фільтрувати оголошення за різними критеріями і отримувати актуальні оновлення."
+                name="Маргарита"
+                stars="5"
+                coverImage="/personPfp.png"
+              />
+            </CarouselItem>
+            <CarouselItem className="basis-1/2">
+              <ReviewsCards 
+                message="JobSpotter - це зручна та ефективна платформа для пошуку роботи. Вона дозволяє швидко знаходити вакансії, що відповідають моїм вимогам, і надає простий інтерфейс. Дуже подобається, що можна фільтрувати оголошення за різними критеріями і отримувати актуальні оновлення."
+                name="Маргарита"
+                stars="5"
+                coverImage="/personPfp.png"
+              />
+            </CarouselItem>
+            <CarouselItem className="basis-1/2https://github.com/Kaligoz/JobSpotter.git">
+              <ReviewsCards 
+                message="JobSpotter - це зручна та ефективна платформа для пошуку роботи. Вона дозволяє швидко знаходити вакансії, що відповідають моїм вимогам, і надає простий інтерфейс. Дуже подобається, що можна фільтрувати оголошення за різними критеріями і отримувати актуальні оновлення."
+                name="Маргарита"
+                stars="5"
+                coverImage="/personPfp.png"
+              />
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
+
+      </section>
+
+      <section className="m-auto flex flex-col justify-between items-start w-2/3">
+
+        <h2 className="text-4xl font-semibold mb-8">Найпоширені питання</h2>
+
+        <table className="border border-[#12181C4D] text-xl font-medium mb-4 table-fixed w-full">
+        <tbody>
+          <tr> 
+            <th className="w-20 text-4xl text-[#969BBB] border border-[#12181C4D] p-4">№</th>
+            <th className="text-4xl border border-[#12181C4D]">Питання</th>
+            <th className="text-4xl border border-[#12181C4D]">Відповідь</th>
+          </tr>
+          <tr className="group hover:bg-[#969BBB] hover:text-white">
+            <td className="w-20 text-4xl text-[#969BBB] border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                01
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                Чи можна зберігати цікаві вакансії для подальшого перегляду?
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                Так, можна зберігати вакансії для подальшого перегляду в списку &quot;Збережені&quot;.
+              </div>
+            </td>
+          </tr>
+          <tr className="group hover:bg-[#969BBB] hover:text-white">
+            <td className="w-20 text-4xl text-[#969BBB] border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                02
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Як налаштувати сповіщення про нові вакансії?
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Щоб налаштувати сповіщення про нові вакансії, потрібно вказати свої критерії пошуку на платформі, а потім активувати сповіщення через налаштування профілю.
+              </div>
+            </td>
+          </tr>
+          <tr className="group hover:bg-[#969BBB] hover:text-white">
+            <td className="w-20 text-4xl text-[#969BBB] border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                03
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Як зрозуміти, чи підходить вакансія для мене?
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Щоб зрозуміти, чи підходить вакансія, перевірте вимоги, обов&apos;язки та умови роботи, порівнявши їх зі своїми навичками та досвідом.
+              </div>
+            </td>
+          </tr>
+          <tr className="group hover:bg-[#969BBB] hover:text-white">
+            <td className="w-20 text-4xl text-[#969BBB] border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                04
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Чи можна подати заявку на кілька вакансій одночасно?
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Так, можна подати заявку на кілька вакансій одночасно!
+              </div>
+            </td>
+          </tr>
+          <tr className="group hover:bg-[#969BBB] hover:text-white">
+            <td className="w-20 text-4xl text-[#969BBB] border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-center group-hover:text-white">
+                05
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                Як змінити мову інтерфейсу на платформі?
+              </div>
+            </td>
+            <td className="border border-[#12181C4D] p-4">
+              <div className="flex items-center justify-start group-hover:text-white">
+                У верхньому правому куті є вибір мови, натиснувши туди Ви зможе обрати мову яка Вам треба.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+
+      </section>
+
+    </main>
   );
 }
