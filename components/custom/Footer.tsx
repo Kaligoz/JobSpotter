@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FaAccessibleIcon, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { IoLogoFacebook } from "react-icons/io";
 
 export default function Footer() {
     return (
@@ -20,10 +22,10 @@ export default function Footer() {
                     </p>
 
                     <div className="grid grid-cols-4 gap-2 w-fit">
-                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center">P</div>
-                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center">P</div>
-                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center">P</div>
-                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center">P</div>
+                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center"><FaAccessibleIcon /></div>
+                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center"><FaLinkedin /></div>
+                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center"><FaTelegram /></div>
+                        <div className="rounded-full w-[40px] h-[40px] border border-[#B3C6CCB2] flex items-center justify-center"><IoLogoFacebook /></div>
                     </div>
 
                 </div>

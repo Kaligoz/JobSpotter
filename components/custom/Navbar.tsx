@@ -1,5 +1,8 @@
 import { ThemeToggle } from "./ThemeToggle";
 import Image from "next/image";
+import { CgProfile } from "react-icons/cg";
+import DropdownMenu from "./DropdownMenu";
+
 
 export default function Navbar() {
     return (
@@ -12,9 +15,13 @@ export default function Navbar() {
             />
             <div className="flex flex-row items-center justify-center gap-2">
                 <p className="border rounded-full border-black p-1">
-                    p
+                    <CgProfile />
                 </p>
+
+                <DropdownMenu NameOfUser="Alex"/>
+                
                 <ThemeToggle/>
+
             </div>
         </nav>
     );
