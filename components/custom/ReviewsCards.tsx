@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import { FC } from 'react'
+import DynamicStars from './DynamicStars';
 
 interface ReviewsCardsProps {
   coverImage: string,
   name: string,
   message: string,
-  stars: string,
+  rating: number,
 }
 
-const ReviewsCards: FC<ReviewsCardsProps> = ({coverImage, name, message, stars}) => {
+const ReviewsCards: FC<ReviewsCardsProps> = ({coverImage, name, message, rating}) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="bg-[#B3C6CC] rounded-md p-4 text-center flex items-center justify-center relative mb-4">
@@ -27,7 +28,7 @@ const ReviewsCards: FC<ReviewsCardsProps> = ({coverImage, name, message, stars})
         {name}
       </h4>
       <p>
-        {stars}
+        <DynamicStars rating={rating}/>
       </p>
     </div>
   );

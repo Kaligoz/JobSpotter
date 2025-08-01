@@ -1,8 +1,9 @@
 import PropositionsCloseCard from "@/components/custom/PropositionsCloseCard";
 import ReviewsCards from "@/components/custom/ReviewsCards";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-
 import Image from "next/image";
+import reviews from "@/data/reviews.json";
+import localJobs from "@/data/localJobs.json";
 
 export default function Home() {
   return (
@@ -85,12 +86,22 @@ export default function Home() {
 
         <h2 className="text-4xl font-semibold mb-8">Пропозиції поруч</h2>
 
-        <div className="flex flex-row gap-x-8">
+        <div className="flex gap-x-8">
 
-          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
-          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
-          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
-          <PropositionsCloseCard link="/" coverPhoto="/CoverPhoto.png" name="Вигул собаки" description="Гуляти з собакою 3 рази на день по 30 хвилин. Потрібна активна та любляча тварин людина. Оплата 200-500 грн."/>
+          <Carousel>
+            <CarouselContent>
+              {localJobs.map((localJob) => (
+                <CarouselItem className="basis-1/4" key={localJob.id}>
+                  <PropositionsCloseCard 
+                    link={localJob.link} 
+                    coverPhoto={localJob.coverPhoto}  
+                    name={localJob.name} 
+                    description={localJob.description} 
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
 
         </div>
 
@@ -102,30 +113,16 @@ export default function Home() {
 
         <Carousel>
           <CarouselContent>
-            <CarouselItem className="basis-1/2">
-              <ReviewsCards 
-                message="JobSpotter - це зручна та ефективна платформа для пошуку роботи. Вона дозволяє швидко знаходити вакансії, що відповідають моїм вимогам, і надає простий інтерфейс. Дуже подобається, що можна фільтрувати оголошення за різними критеріями і отримувати актуальні оновлення."
-                name="Маргарита"
-                stars="5"
-                coverImage="/personPfp.png"
-              />
-            </CarouselItem>
-            <CarouselItem className="basis-1/2">
-              <ReviewsCards 
-                message="JobSpotter - це зручна та ефективна платформа для пошуку роботи. Вона дозволяє швидко знаходити вакансії, що відповідають моїм вимогам, і надає простий інтерфейс. Дуже подобається, що можна фільтрувати оголошення за різними критеріями і отримувати актуальні оновлення."
-                name="Маргарита"
-                stars="5"
-                coverImage="/personPfp.png"
-              />
-            </CarouselItem>
-            <CarouselItem className="basis-1/2https://github.com/Kaligoz/JobSpotter.git">
-              <ReviewsCards 
-                message="JobSpotter - це зручна та ефективна платформа для пошуку роботи. Вона дозволяє швидко знаходити вакансії, що відповідають моїм вимогам, і надає простий інтерфейс. Дуже подобається, що можна фільтрувати оголошення за різними критеріями і отримувати актуальні оновлення."
-                name="Маргарита"
-                stars="5"
-                coverImage="/personPfp.png"
-              />
-            </CarouselItem>
+            {reviews.map((review) => (
+              <CarouselItem className="basis-1/2" key={review.id}>
+                <ReviewsCards 
+                  message={review.message}
+                  name={review.name}
+                  rating={review.rating}
+                  coverImage={review.coverImage}
+                />
+              </CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
 
